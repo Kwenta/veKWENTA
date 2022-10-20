@@ -68,7 +68,7 @@ test/veKwenta.t.sol ^0.8.13
 ### L2
 @todo
 
-## Visual Aid
+## Diagram
 <p align="center">
-  <img src="/veKWENTA_1.jpg" width="400" height="400" alt="veKwenta"/>
+  <img src="/veKWENTA_1.jpg" width="800" height="800" alt="veKwenta"/>
 </p>
