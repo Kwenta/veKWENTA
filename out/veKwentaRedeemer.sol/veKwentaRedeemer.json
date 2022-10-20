@@ -1,0 +1,109 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212207965e02e8961df0e2d6a59346303ac69f8e2987cb5a8f058861dd4d1f7c7995e64736f6c634300080d0033",
+    "sourceMap": "65:28:9:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052600080fdfea26469706673582212207965e02e8961df0e2d6a59346303ac69f8e2987cb5a8f058861dd4d1f7c7995e64736f6c634300080d0033",
+    "sourceMap": "65:28:9:-:0;;;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/veKwentaRedeemer.sol\":\"veKwentaRedeemer\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/veKwentaRedeemer.sol\":{\"keccak256\":\"0xc0fced285dc6e7079f410ad853b5c424f3d04f11faf0d973e2ee0e04980c9c01\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://80b3aca320877d93591a1a0c73f6fec512eba82f65285e39c707faa907628634\",\"dweb:/ipfs/Qmaj2Pxic4ey8eeSVuRw4xPFWiZXVRwCHbZx8FJAC4iPki\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.13+commit.abaa5c0e"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":ds-test/=lib/forge-std/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/",
+        ":solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/veKwentaRedeemer.sol": "veKwentaRedeemer"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/veKwentaRedeemer.sol": {
+        "keccak256": "0xc0fced285dc6e7079f410ad853b5c424f3d04f11faf0d973e2ee0e04980c9c01",
+        "urls": [
+          "bzz-raw://80b3aca320877d93591a1a0c73f6fec512eba82f65285e39c707faa907628634",
+          "dweb:/ipfs/Qmaj2Pxic4ey8eeSVuRw4xPFWiZXVRwCHbZx8FJAC4iPki"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/veKwentaRedeemer.sol",
+    "id": 23252,
+    "exportedSymbols": {
+      "veKwentaRedeemer": [
+        23251
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:55:9",
+    "nodes": [
+      {
+        "id": 23250,
+        "nodeType": "PragmaDirective",
+        "src": "39:24:9",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".13"
+        ]
+      },
+      {
+        "id": 23251,
+        "nodeType": "ContractDefinition",
+        "src": "65:28:9",
+        "nodes": [],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "veKwentaRedeemer",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          23251
+        ],
+        "name": "veKwentaRedeemer",
+        "nameLocation": "74:16:9",
+        "scope": 23252,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 9
+}
