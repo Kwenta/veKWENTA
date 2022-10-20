@@ -64,8 +64,6 @@ test/veKwenta.t.sol ^0.8.13
 ## Addresses
 
 ### L1
-aelinPoolL1:
-veKwenta.sol:
+@todo
 ### L2
-aelinPoolL2:
-veKwentaRedeemer.sol:
+@todo
