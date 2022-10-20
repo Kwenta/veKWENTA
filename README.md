@@ -61,14 +61,14 @@ test/veKwenta.t.sol ^0.8.13
 * Whitelisted addresss will purchase $veKWENTA
 * $veKWENTA can be used to redeem $KWENTA which will then be sent to escrow
 
+## Diagram
+<p align="center">
+  <img src="/veKWENTA_1.jpg" width="800" height="800" alt="veKwenta"/>
+</p>
+
 ## Addresses
 
 ### L1
 @todo
 ### L2
 @todo
-
-## Diagram
-<p align="center">
-  <img src="/veKWENTA_1.jpg" width="800" height="800" alt="veKwenta"/>
-</p>
