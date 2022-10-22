@@ -3,7 +3,7 @@ pragma solidity ^0.8.13;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-/// @title L1 veKwenta (Optimism)
+/// @title L1 veKwenta (Mainnet)
 /// @author JaredBorders (jaredborders@proton.me)
 /// @notice see https://github.com/ethereum-optimism
 /// @dev simply deploy and supply aelin pool with veKwenta which
