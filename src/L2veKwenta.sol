@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./interfaces/IL2StandardERC20.sol";
+import {Lib_PredeployAddresses} from "./libraries/Lib_PredeployAddresses.sol";
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 /// @title L2 veKwenta (Optimism)
 /// @author JaredBorders (jaredborders@proton.me)
@@ -10,33 +11,24 @@ import "./interfaces/IL2StandardERC20.sol";
 /// @dev simply deploy and supply aelin pool with veKwenta which supports
 /// L2 standard ERC20 interface (thus facilitates bridging)
 contract L2veKwenta is IL2StandardERC20, ERC20 {
-    address public l1Token;
-    address public l2Bridge;
+    address public immutable l1Token;
+    address public immutable l2Bridge;
 
-    /// @param _aelinPoolL2 address of aelin pool on L2
-    /// @param _amountToMintForAelinL2 amount to mint and transfer
-    /// @param _l2Bridge Address of the L2 standard bridge
-    /// @param _l1Token Address of the corresponding L1 token
+    modifier onlyL2Bridge() {
+        require(msg.sender == l2Bridge, "Only L2 Bridge can mint and burn");
+        _;
+    }
+
+    /// @param _l1Token address of the corresponding L1 token
     /// @param _name ERC20 name
     /// @param _symbol ERC20 symbol
     constructor(
-        address _aelinPoolL2,
-        uint256 _amountToMintForAelinL2,
-        address _l2Bridge,
         address _l1Token,
         string memory _name,
         string memory _symbol
     ) ERC20(_name, _symbol) {
         l1Token = _l1Token;
-        l2Bridge = _l2Bridge;
-
-        /// @dev mint specified amount for aelin pool
-        _mint(_aelinPoolL2, _amountToMintForAelinL2);
-    }
-
-    modifier onlyL2Bridge() {
-        require(msg.sender == l2Bridge, "Only L2 Bridge can mint and burn");
-        _;
+        l2Bridge = Lib_PredeployAddresses.L2_STANDARD_BRIDGE;
     }
 
     // slither-disable-next-line external-function
