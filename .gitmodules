@@ -1,3 +1,6 @@
 [submodule "lib/openzeppelin-contracts"]
 	path = lib/openzeppelin-contracts
 	url = https://github.com/openzeppelin/openzeppelin-contracts
+[submodule "lib/token"]
+	path = lib/token
+	url = https://github.com/Kwenta/token
