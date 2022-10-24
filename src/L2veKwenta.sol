@@ -5,10 +5,10 @@ import "./interfaces/IL2StandardERC20.sol";
 import {Lib_PredeployAddresses} from "./libraries/Lib_PredeployAddresses.sol";
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-/// @title L2 veKwenta (Optimism)
+/// @title L2 $veKWENTA (Optimism)
 /// @author JaredBorders (jaredborders@proton.me)
 /// @notice see https://github.com/ethereum-optimism
-/// @dev simply deploy L2 veKwenta which supports
+/// @dev simply deploy L2 $veKWENTA which supports
 /// L2 standard ERC20 interface (thus facilitating bridging)
 contract L2veKwenta is IL2StandardERC20, ERC20 {
     address public immutable l1Token;
@@ -19,8 +19,8 @@ contract L2veKwenta is IL2StandardERC20, ERC20 {
         _;
     }
 
-    /// @notice no veKwenta is minted in constructor
-    /// @dev all veKwenta will be minted on L1 and bridged
+    /// @notice no $veKWENTA is minted in constructor
+    /// @dev all $veKWENTA will be minted on L1 and bridged
     /// @param _l1Token address of the corresponding L1 token
     /// @param _name ERC20 name
     /// @param _symbol ERC20 symbol

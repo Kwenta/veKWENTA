@@ -3,12 +3,12 @@ pragma solidity ^0.8.13;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-/// @title L1 veKwenta (Mainnet)
+/// @title L1 $veKWENTA (Mainnet)
 /// @author JaredBorders (jaredborders@proton.me)
 /// @notice see https://github.com/ethereum-optimism
-/// @dev simply deploy L1 veKwenta
+/// @dev simply deploy L1 $veKWENTA
 contract L1veKwenta is ERC20 {
-    /// @notice deploy veKwenta on L1 and mint total supply
+    /// @notice deploy $veKWENTA on L1 and mint total supply
     /// and transfer total supply to _mintToAddress
     /// @param _mintToAddress address to mint initial supply
     /// @param _amountToMint amount to mint and transfer
