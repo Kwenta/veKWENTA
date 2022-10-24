@@ -8,8 +8,8 @@ import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 /// @title L2 veKwenta (Optimism)
 /// @author JaredBorders (jaredborders@proton.me)
 /// @notice see https://github.com/ethereum-optimism
-/// @dev simply deploy and supply aelin pool with veKwenta which supports
-/// L2 standard ERC20 interface (thus facilitates bridging)
+/// @dev simply deploy L2 veKwenta pair which supports
+/// L2 standard ERC20 interface (thus facilitating bridging)
 contract L2veKwenta is IL2StandardERC20, ERC20 {
     address public immutable l1Token;
     address public immutable l2Bridge;
