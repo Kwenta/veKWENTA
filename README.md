@@ -5,7 +5,7 @@
 [![License: MIT][license-badge]][license]
 
 [gha]: https://github.com/Kwenta/veKWENTA/actions
-[gha-badge]: https://github.com/Kwenta/veKWENTA/actions/workflows/ci.yml/badge.svg
+[gha-badge]: https://github.com/Kwenta/veKWENTA/actions/workflows/Tests.yml/badge.svg
 [foundry]: https://getfoundry.sh/
 [foundry-badge]: https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg
 [license]: https://opensource.org/licenses/MIT
