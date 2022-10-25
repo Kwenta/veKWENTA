@@ -142,7 +142,7 @@ test/veKwentaRedeemer.t.sol ^0.8.13
   <img src="/veKWENTA_1.jpg" width="800" height="800" alt="veKwenta"/>
 </p>
 
-## Addresses
+## Deployment Addresses
 
 ### L1
 
