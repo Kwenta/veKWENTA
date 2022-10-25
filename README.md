@@ -4,7 +4,7 @@ Used for the $KWENTA token distribution as described in https://kips.kwenta.io/k
 
 ## Contracts
 
-```ml
+```
 script/GoerliDeploy.s.sol ^0.8.13
 └── lib/forge-std/src/Script.sol >=0.6.0 <0.9.0
     ├── lib/forge-std/src/console.sol >=0.4.22 <0.9.0
@@ -95,7 +95,7 @@ test/veKwentaRedeemer.t.sol ^0.8.13
 * $veKWENTA can be used to redeem $KWENTA which will then be sent to escrow
 
 ## Code Coverage
-```ml
+```
 +--------------------------+----------------+----------------+---------------+---------------+
 | File                     | % Lines        | % Statements   | % Branches    | % Funcs       |
 +============================================================================================+
