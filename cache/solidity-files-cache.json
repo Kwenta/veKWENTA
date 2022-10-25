@@ -314,6 +314,297 @@
         }
       }
     },
+    "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol": {
+      "lastModificationDate": 1666374899215,
+      "contentHash": "d151fbfe7939989b9acf22797b32058b",
+      "sourceName": "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC20": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "interfaces/IERC20.sol/IERC20.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1666374899229,
+      "contentHash": "92cc1aad41bdb18ca20f6e03f461de7d",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "ERC20": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "ERC20.sol/ERC20.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1666375191105,
+      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC20": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "IERC20.sol/IERC20.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1666374899230,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC20Metadata": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "IERC20Metadata.sol/IERC20Metadata.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+      "lastModificationDate": 1666374899234,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "Context": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "Context.sol/Context.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1666374899235,
+      "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC165": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "IERC165.sol/IERC165.json"
+        }
+      }
+    },
+    "lib/token/contracts/interfaces/IRewardEscrow.sol": {
+      "lastModificationDate": 1666639666879,
+      "contentHash": "b886f2cf7f598294a676dfe0a60c6cce",
+      "sourceName": "lib/token/contracts/interfaces/IRewardEscrow.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IRewardEscrow": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "IRewardEscrow.sol/IRewardEscrow.json"
+        },
+        "VestingEntries": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "IRewardEscrow.sol/VestingEntries.json"
+        }
+      }
+    },
     "script/Deploy.s.sol": {
       "lastModificationDate": 1666304512064,
       "contentHash": "dbe87f4e2c2eea60e53bba8238ff66bb",
@@ -360,10 +651,146 @@
         }
       }
     },
-    "src/veKwenta.sol": {
-      "lastModificationDate": 1666304097865,
-      "contentHash": "98d091215d1be1c6a810488c49344f16",
-      "sourceName": "src/veKwenta.sol",
+    "src/L1veKwenta.sol": {
+      "lastModificationDate": 1666641003885,
+      "contentHash": "6294576b089c95d5e219a08f0fef8e8a",
+      "sourceName": "src/L1veKwenta.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "L1veKwenta": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "L1veKwenta.sol/L1veKwenta.json"
+        }
+      }
+    },
+    "src/L2veKwenta.sol": {
+      "lastModificationDate": 1666641019041,
+      "contentHash": "9163bb62c29624be63d70793908ed3cf",
+      "sourceName": "src/L2veKwenta.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "src/interfaces/IL2StandardERC20.sol",
+        "src/libraries/Lib_PredeployAddresses.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "L2veKwenta": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "L2veKwenta.sol/L2veKwenta.json"
+        }
+      }
+    },
+    "src/interfaces/IL2StandardERC20.sol": {
+      "lastModificationDate": 1666636530737,
+      "contentHash": "d00cc5efde94c7b67c0ed6cb784d2161",
+      "sourceName": "src/interfaces/IL2StandardERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "IL2StandardERC20": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "IL2StandardERC20.sol/IL2StandardERC20.json"
+        }
+      }
+    },
+    "src/libraries/Lib_PredeployAddresses.sol": {
+      "lastModificationDate": 1666636569653,
+      "contentHash": "9b192c0f834b1a055da94378ffd2c89e",
+      "sourceName": "src/libraries/Lib_PredeployAddresses.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -395,14 +822,14 @@
       "imports": [],
       "versionRequirement": "^0.8.13",
       "artifacts": {
-        "veKwenta": {
-          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "veKwenta.sol/veKwenta.json"
+        "Lib_PredeployAddresses": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "Lib_PredeployAddresses.sol/Lib_PredeployAddresses.json"
         }
       }
     },
     "src/veKwentaRedeemer.sol": {
-      "lastModificationDate": 1666304141560,
-      "contentHash": "5709d41029f5e7fc0b4fb16e84807572",
+      "lastModificationDate": 1666642116142,
+      "contentHash": "d3f6077383d9a653c12fbbdefeee2e8e",
       "sourceName": "src/veKwentaRedeemer.sol",
       "solcConfig": {
         "settings": {
@@ -432,7 +859,11 @@
           "libraries": {}
         }
       },
-      "imports": [],
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/token/contracts/interfaces/IRewardEscrow.sol"
+      ],
       "versionRequirement": "^0.8.13",
       "artifacts": {
         "veKwentaRedeemer": {
@@ -440,10 +871,10 @@
         }
       }
     },
-    "test/veKwenta.t.sol": {
-      "lastModificationDate": 1666304246738,
-      "contentHash": "f6ce86affaa43119c63446b443113d4e",
-      "sourceName": "test/veKwenta.t.sol",
+    "test/L1veKwenta.t.sol": {
+      "lastModificationDate": 1666714321118,
+      "contentHash": "424ed66a515bd6e4e61fd63af07c7bd7",
+      "sourceName": "test/L1veKwenta.t.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -480,12 +911,124 @@
         "lib/forge-std/src/Vm.sol",
         "lib/forge-std/src/console.sol",
         "lib/forge-std/src/console2.sol",
-        "src/veKwenta.sol"
+        "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "src/L1veKwenta.sol"
       ],
       "versionRequirement": "^0.8.13",
       "artifacts": {
-        "veKwentaTest": {
-          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "veKwenta.t.sol/veKwentaTest.json"
+        "L1veKwentaTest": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "L1veKwenta.t.sol/L1veKwentaTest.json"
+        }
+      }
+    },
+    "test/L2veKwenta.t.sol": {
+      "lastModificationDate": 1666715528232,
+      "contentHash": "cf1787170d882b4f4b9a47bdedec9164",
+      "sourceName": "test/L2veKwenta.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "src/L2veKwenta.sol",
+        "src/interfaces/IL2StandardERC20.sol",
+        "src/libraries/Lib_PredeployAddresses.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "L2veKwentaTest": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "L2veKwenta.t.sol/L2veKwentaTest.json"
+        }
+      }
+    },
+    "test/veKwentaRedeemer.t.sol": {
+      "lastModificationDate": 1666713201945,
+      "contentHash": "a365d1c6cbf7eb8b9d594b5fd17e6a10",
+      "sourceName": "test/veKwentaRedeemer.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/token/contracts/interfaces/IRewardEscrow.sol",
+        "src/veKwentaRedeemer.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "veKwentaRedeemerTest": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "veKwentaRedeemer.t.sol/veKwentaRedeemerTest.json"
         }
       }
     }

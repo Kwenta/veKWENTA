@@ -1,40 +1,396 @@
 {
-  "abi": [],
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_veKwenta",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_kwenta",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_rewardEscrow",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "callerBalance",
+          "type": "uint256"
+        }
+      ],
+      "name": "InvalidCallerBalance",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "contractBalance",
+          "type": "uint256"
+        }
+      ],
+      "name": "InvalidContractBalance",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        }
+      ],
+      "name": "TransferFailed",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "redeemer",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "beneficiary",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "redeemedAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Redeemed",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "kwenta",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_beneficiary",
+          "type": "address"
+        }
+      ],
+      "name": "redeem",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rewardEscrow",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "veKwenta",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
   "bytecode": {
-    "object": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212207965e02e8961df0e2d6a59346303ac69f8e2987cb5a8f058861dd4d1f7c7995e64736f6c634300080d0033",
-    "sourceMap": "65:28:9:-:0;;;;;;;;;;;;;;;;;;;",
+    "object": "0x60e060405234801561001057600080fd5b5060405161064938038061064983398101604081905261002f91610068565b6001600160a01b0392831660805290821660a0521660c0526100ab565b80516001600160a01b038116811461006357600080fd5b919050565b60008060006060848603121561007d57600080fd5b6100868461004c565b92506100946020850161004c565b91506100a26040850161004c565b90509250925092565b60805160a05160c0516105486101016000396000818160ae0152818161033801526104050152600081816056015281816101a5015261036701526000818160d50152818161010f015261028a01526105486000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80639034802b1461005157806395a2251f14610094578063a430be6c146100a9578063a757fb49146100d0575b600080fd5b6100787f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b03909116815260200160405180910390f35b6100a76100a23660046104a7565b6100f7565b005b6100787f000000000000000000000000000000000000000000000000000000000000000081565b6100787f000000000000000000000000000000000000000000000000000000000000000081565b6040516370a0823160e01b81523360048201526000907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316906370a0823190602401602060405180830381865afa15801561015e573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061018291906104d7565b6040516370a0823160e01b81523060048201529091506000906001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016906370a0823190602401602060405180830381865afa1580156101ec573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061021091906104d7565b905081600003610241576040516301ef1ffd60e61b8152336004820152602481018390526044015b60405180910390fd5b808211156102655760405163a6b317c360e01b815260048101829052602401610238565b6040516323b872dd60e01b8152336004820152306024820152604481018390526000907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316906323b872dd906064016020604051808303816000875af11580156102db573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102ff91906104f0565b905080610321576040516339f1c8d960e01b8152336004820152602401610238565b60405163095ea7b360e01b81526001600160a01b037f000000000000000000000000000000000000000000000000000000000000000081166004830152602482018590527f0000000000000000000000000000000000000000000000000000000000000000169063095ea7b3906044016020604051808303816000875af11580156103b0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103d491906104f0565b5060405163a0416ed360e01b81526001600160a01b038581166004830152602482018590526301dfe20060448301527f0000000000000000000000000000000000000000000000000000000000000000169063a0416ed390606401600060405180830381600087803b15801561044957600080fd5b505af115801561045d573d6000803e3d6000fd5b50506040518581526001600160a01b03871692503391507f27d4634c833b7622a0acddbf7f746183625f105945e95c723ad1d5a9f2a0b6fc9060200160405180910390a350505050565b6000602082840312156104b957600080fd5b81356001600160a01b03811681146104d057600080fd5b9392505050565b6000602082840312156104e957600080fd5b5051919050565b60006020828403121561050257600080fd5b815180151581146104d057600080fdfea26469706673582212207cc79b2dcc27c0e24371fe57db6dec411ead3b004fc839bf8f76e7cb20113af564736f6c634300080d0033",
+    "sourceMap": "411:4380:18:-:0;;;2665:202;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;2776:20:18;;;;;2806:16;;;;;2832:28;;;411:4380;;14:177:22;93:13;;-1:-1:-1;;;;;135:31:22;;125:42;;115:70;;181:1;178;171:12;115:70;14:177;;;:::o;196:378::-;284:6;292;300;353:2;341:9;332:7;328:23;324:32;321:52;;;369:1;366;359:12;321:52;392:40;422:9;392:40;:::i;:::-;382:50;;451:49;496:2;485:9;481:18;451:49;:::i;:::-;441:59;;519:49;564:2;553:9;549:18;519:49;:::i;:::-;509:59;;196:378;;;;;:::o;:::-;411:4380:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x6080604052600080fdfea26469706673582212207965e02e8961df0e2d6a59346303ac69f8e2987cb5a8f058861dd4d1f7c7995e64736f6c634300080d0033",
-    "sourceMap": "65:28:9:-:0;;;;;",
-    "linkReferences": {}
+    "object": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80639034802b1461005157806395a2251f14610094578063a430be6c146100a9578063a757fb49146100d0575b600080fd5b6100787f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b03909116815260200160405180910390f35b6100a76100a23660046104a7565b6100f7565b005b6100787f000000000000000000000000000000000000000000000000000000000000000081565b6100787f000000000000000000000000000000000000000000000000000000000000000081565b6040516370a0823160e01b81523360048201526000907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316906370a0823190602401602060405180830381865afa15801561015e573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061018291906104d7565b6040516370a0823160e01b81523060048201529091506000906001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016906370a0823190602401602060405180830381865afa1580156101ec573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061021091906104d7565b905081600003610241576040516301ef1ffd60e61b8152336004820152602481018390526044015b60405180910390fd5b808211156102655760405163a6b317c360e01b815260048101829052602401610238565b6040516323b872dd60e01b8152336004820152306024820152604481018390526000907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316906323b872dd906064016020604051808303816000875af11580156102db573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102ff91906104f0565b905080610321576040516339f1c8d960e01b8152336004820152602401610238565b60405163095ea7b360e01b81526001600160a01b037f000000000000000000000000000000000000000000000000000000000000000081166004830152602482018590527f0000000000000000000000000000000000000000000000000000000000000000169063095ea7b3906044016020604051808303816000875af11580156103b0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103d491906104f0565b5060405163a0416ed360e01b81526001600160a01b038581166004830152602482018590526301dfe20060448301527f0000000000000000000000000000000000000000000000000000000000000000169063a0416ed390606401600060405180830381600087803b15801561044957600080fd5b505af115801561045d573d6000803e3d6000fd5b50506040518581526001600160a01b03871692503391507f27d4634c833b7622a0acddbf7f746183625f105945e95c723ad1d5a9f2a0b6fc9060200160405180910390a350505050565b6000602082840312156104b957600080fd5b81356001600160a01b03811681146104d057600080fd5b9392505050565b6000602082840312156104e957600080fd5b5051919050565b60006020828403121561050257600080fd5b815180151581146104d057600080fdfea26469706673582212207cc79b2dcc27c0e24371fe57db6dec411ead3b004fc839bf8f76e7cb20113af564736f6c634300080d0033",
+    "sourceMap": "411:4380:18:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;780:31;;;;;;;;-1:-1:-1;;;;;178:32:22;;;160:51;;148:2;133:18;780:31:18;;;;;;;3319:1470;;;;;;:::i;:::-;;:::i;:::-;;856:37;;;;;661:33;;;;;3319:1470;3460:38;;-1:-1:-1;;;3460:38:18;;3487:10;3460:38;;;160:51:22;3428:29:18;;3467:8;-1:-1:-1;;;;;3460:26:18;;;;133:18:22;;3460:38:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;3540:39;;-1:-1:-1;;;3540:39:18;;3573:4;3540:39;;;160:51:22;3428:70:18;;-1:-1:-1;3508:29:18;;-1:-1:-1;;;;;3547:6:18;3540:24;;;;133:18:22;;3540:39:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;3508:71;;3637:21;3662:1;3637:26;3633:190;;3686:126;;-1:-1:-1;;;3686:126:18;;3733:10;3686:126;;;876:51:22;943:18;;;936:34;;;849:18;;3686:126:18;;;;;;;;3633:190;3902:21;3878;:45;3874:177;;;3946:94;;-1:-1:-1;;;3946:94:18;;;;;1127:25:22;;;1100:18;;3946:94:18;981:177:22;3874::18;4120:125;;-1:-1:-1;;;4120:125:18;;4163:10;4120:125;;;1403:34:22;4195:4:18;1453:18:22;;;1446:43;1505:18;;;1498:34;;;4105:12:18;;4127:8;-1:-1:-1;;;;;4120:29:18;;;;1338:18:22;;4120:125:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;4105:140;;4297:7;4292:82;;4327:36;;-1:-1:-1;;;4327:36:18;;4351:10;4327:36;;;160:51:22;133:18;;4327:36:18;14:203:22;4292:82:18;4415:59;;-1:-1:-1;;;4415:59:18;;-1:-1:-1;;;;;4438:12:18;894:32:22;;4415:59:18;;;876:51:22;943:18;;;936:34;;;4422:6:18;4415:22;;;;849:18:22;;4415:59:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;4484:138:18;;-1:-1:-1;;;4484:138:18;;-1:-1:-1;;;;;2060:32:22;;;4484:138:18;;;2042:51:22;2109:18;;;2102:34;;;4604:8:18;2152:18:22;;;2145:34;4498:12:18;4484:45;;;;2015:18:22;;4484:138:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;4638:144:18;;1127:25:22;;;-1:-1:-1;;;;;4638:144:18;;;-1:-1:-1;4671:10:18;;-1:-1:-1;4638:144:18;;1115:2:22;1100:18;4638:144:18;;;;;;;3366:1423;;;3319:1470;:::o;222:286:22:-;281:6;334:2;322:9;313:7;309:23;305:32;302:52;;;350:1;347;340:12;302:52;376:23;;-1:-1:-1;;;;;428:31:22;;418:42;;408:70;;474:1;471;464:12;408:70;497:5;222:286;-1:-1:-1;;;222:286:22:o;513:184::-;583:6;636:2;624:9;615:7;611:23;607:32;604:52;;;652:1;649;642:12;604:52;-1:-1:-1;675:16:22;;513:184;-1:-1:-1;513:184:22:o;1543:277::-;1610:6;1663:2;1651:9;1642:7;1638:23;1634:32;1631:52;;;1679:1;1676;1669:12;1631:52;1711:9;1705:16;1764:5;1757:13;1750:21;1743:5;1740:32;1730:60;;1786:1;1783;1776:12",
+    "linkReferences": {},
+    "immutableReferences": {
+      "24352": [
+        {
+          "start": 213,
+          "length": 32
+        },
+        {
+          "start": 271,
+          "length": 32
+        },
+        {
+          "start": 650,
+          "length": 32
+        }
+      ],
+      "24355": [
+        {
+          "start": 86,
+          "length": 32
+        },
+        {
+          "start": 421,
+          "length": 32
+        },
+        {
+          "start": 871,
+          "length": 32
+        }
+      ],
+      "24358": [
+        {
+          "start": 174,
+          "length": 32
+        },
+        {
+          "start": 824,
+          "length": 32
+        },
+        {
+          "start": 1029,
+          "length": 32
+        }
+      ]
+    }
   },
-  "methodIdentifiers": {},
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/veKwentaRedeemer.sol\":\"veKwentaRedeemer\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/veKwentaRedeemer.sol\":{\"keccak256\":\"0xc0fced285dc6e7079f410ad853b5c424f3d04f11faf0d973e2ee0e04980c9c01\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://80b3aca320877d93591a1a0c73f6fec512eba82f65285e39c707faa907628634\",\"dweb:/ipfs/Qmaj2Pxic4ey8eeSVuRw4xPFWiZXVRwCHbZx8FJAC4iPki\"]}},\"version\":1}",
+  "methodIdentifiers": {
+    "kwenta()": "9034802b",
+    "redeem(address)": "95a2251f",
+    "rewardEscrow()": "a430be6c",
+    "veKwenta()": "a757fb49"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_veKwenta\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_kwenta\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_rewardEscrow\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"callerBalance\",\"type\":\"uint256\"}],\"name\":\"InvalidCallerBalance\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"contractBalance\",\"type\":\"uint256\"}],\"name\":\"InvalidContractBalance\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"TransferFailed\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"redeemer\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beneficiary\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"redeemedAmount\",\"type\":\"uint256\"}],\"name\":\"Redeemed\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"kwenta\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_beneficiary\",\"type\":\"address\"}],\"name\":\"redeem\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardEscrow\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"veKwenta\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"JaredBorders (jaredborders@proton.me)\",\"errors\":{\"InvalidCallerBalance(address,uint256)\":[{\"params\":{\"caller\":\": caller of the redeem() function\",\"callerBalance\":\": caller's balance of $veKWENTA\"}}],\"InvalidContractBalance(uint256)\":[{\"params\":{\"contractBalance\":\": veKwentaRedeemer's $KWENTA balance\"}}],\"TransferFailed(address)\":[{\"params\":{\"caller\":\": caller of the redeem() function\"}}]},\"events\":{\"Redeemed(address,address,uint256)\":{\"params\":{\"beneficiary\":\": account address used when creating escrow entry\",\"redeemedAmount\":\": amount of $KWENTA redeemed and then escrowed\",\"redeemer\":\": caller who exchanged $veKWENTA for $KWENTA\"}}},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_kwenta\":\": L2 token address $KWENTA\",\"_rewardEscrow\":\": address of reward escrow for $KWENTA\",\"_veKwenta\":\": L2 token address of $veKWENTA\"}},\"redeem(address)\":{\"details\":\"$KWENTA will be sent to reward escrowcaller must approve this contract to spend $veKWENTA\",\"params\":{\"_beneficiary\":\": account address used when creating escrow entry\"}}},\"stateVariables\":{\"kwenta\":{\"details\":\"token will be sent to escrow\"}},\"title\":\"$veKWENTA redeemer for $KWENTA (Optimism)\",\"version\":1},\"userdoc\":{\"errors\":{\"InvalidCallerBalance(address,uint256)\":[{\"notice\":\"caller has no $veKWENTA to exchange\"}],\"InvalidContractBalance(uint256)\":[{\"notice\":\"contract does not have enough $KWENTA to exchange\"}],\"TransferFailed(address)\":[{\"notice\":\"$veKWENTA transfer to this address failed\"}]},\"events\":{\"Redeemed(address,address,uint256)\":{\"notice\":\"emitted when $veKWENTA is exchanged for $KWENTA\"}},\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"establish necessary addresses\"},\"kwenta()\":{\"notice\":\"token to be redeemed\"},\"redeem(address)\":{\"notice\":\"exchange caller's $veKWENTA for $KWENTA\"},\"rewardEscrow()\":{\"notice\":\"reward escrow address\"},\"veKwenta()\":{\"notice\":\"token to be burned\"}},\"notice\":\"exchanges $veKWENTA for equal amount of $KWENTA and creates reward escrow entry for address specified by the caller\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/veKwentaRedeemer.sol\":\"veKwentaRedeemer\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@kwenta/=lib/token/contracts/\",\":@openzeppelin/=lib/openzeppelin-contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\",\":token/=lib/token/contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol\":{\"keccak256\":\"0x6ebf1944ab804b8660eb6fc52f9fe84588cee01c2566a69023e59497e7d27f45\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2900536cdadec954ced8789a9d1ed4b5e640029e1424e91fd5b88026486f4d45\",\"dweb:/ipfs/QmUMUX7CuYoiHvFkhifqtXGaciw2wnm4t9sAoPzETZ3Gbq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34\",\"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr\"]},\"lib/token/contracts/interfaces/IRewardEscrow.sol\":{\"keccak256\":\"0x982ccdf737fd3aa86031dd74db05ab789c1e9e72f1c1f57a3b5cd59b28378c3f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://90fa0ca1d16b60bcd78dcef169cd0cabb8ac550c6acf3bbee0c3227aa777d281\",\"dweb:/ipfs/QmXunoE29RKVP3FGNsMUa2K3DiMSBPNs8pu9FueqS5t71X\"]},\"src/veKwentaRedeemer.sol\":{\"keccak256\":\"0xc85839fd1d00b71e18d071c8dec1b9a1e9d7fd08458bf1f20084420ffa0074a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f0c4b52e43157f4790a93cbaed485cb12ba81e0faa5de4d116f1c40e50f3378c\",\"dweb:/ipfs/QmSLhkKz3J3if6uMs31VnhRRWhh9Nd3a5tSaw49AN35fS7\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.13+commit.abaa5c0e"
     },
     "language": "Solidity",
     "output": {
-      "abi": [],
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_veKwenta",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_kwenta",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_rewardEscrow",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "callerBalance",
+              "type": "uint256"
+            }
+          ],
+          "type": "error",
+          "name": "InvalidCallerBalance"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "contractBalance",
+              "type": "uint256"
+            }
+          ],
+          "type": "error",
+          "name": "InvalidContractBalance"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "caller",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "TransferFailed"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "redeemer",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "beneficiary",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "redeemedAmount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Redeemed",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "kwenta",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_beneficiary",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "redeem"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "rewardEscrow",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "veKwenta",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        }
+      ],
       "devdoc": {
         "kind": "dev",
-        "methods": {},
+        "methods": {
+          "constructor": {
+            "params": {
+              "_kwenta": ": L2 token address $KWENTA",
+              "_rewardEscrow": ": address of reward escrow for $KWENTA",
+              "_veKwenta": ": L2 token address of $veKWENTA"
+            }
+          },
+          "redeem(address)": {
+            "details": "$KWENTA will be sent to reward escrowcaller must approve this contract to spend $veKWENTA",
+            "params": {
+              "_beneficiary": ": account address used when creating escrow entry"
+            }
+          }
+        },
         "version": 1
       },
       "userdoc": {
         "kind": "user",
-        "methods": {},
+        "methods": {
+          "constructor": {
+            "notice": "establish necessary addresses"
+          },
+          "kwenta()": {
+            "notice": "token to be redeemed"
+          },
+          "redeem(address)": {
+            "notice": "exchange caller's $veKWENTA for $KWENTA"
+          },
+          "rewardEscrow()": {
+            "notice": "reward escrow address"
+          },
+          "veKwenta()": {
+            "notice": "token to be burned"
+          }
+        },
         "version": 1
       }
     },
     "settings": {
       "remappings": [
+        ":@kwenta/=lib/token/contracts/",
+        ":@openzeppelin/=lib/openzeppelin-contracts/",
         ":ds-test/=lib/forge-std/lib/ds-test/src/",
         ":forge-std/=lib/forge-std/src/",
-        ":solmate/=lib/solmate/src/"
+        ":openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/",
+        ":solmate/=lib/solmate/src/",
+        ":token/=lib/token/contracts/"
       ],
       "optimizer": {
         "enabled": true,
@@ -49,32 +405,65 @@
       "libraries": {}
     },
     "sources": {
-      "src/veKwentaRedeemer.sol": {
-        "keccak256": "0xc0fced285dc6e7079f410ad853b5c424f3d04f11faf0d973e2ee0e04980c9c01",
+      "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol": {
+        "keccak256": "0x6ebf1944ab804b8660eb6fc52f9fe84588cee01c2566a69023e59497e7d27f45",
         "urls": [
-          "bzz-raw://80b3aca320877d93591a1a0c73f6fec512eba82f65285e39c707faa907628634",
-          "dweb:/ipfs/Qmaj2Pxic4ey8eeSVuRw4xPFWiZXVRwCHbZx8FJAC4iPki"
+          "bzz-raw://2900536cdadec954ced8789a9d1ed4b5e640029e1424e91fd5b88026486f4d45",
+          "dweb:/ipfs/QmUMUX7CuYoiHvFkhifqtXGaciw2wnm4t9sAoPzETZ3Gbq"
         ],
-        "license": "UNLICENSED"
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+        "urls": [
+          "bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+          "dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+        ],
+        "license": "MIT"
+      },
+      "lib/token/contracts/interfaces/IRewardEscrow.sol": {
+        "keccak256": "0x982ccdf737fd3aa86031dd74db05ab789c1e9e72f1c1f57a3b5cd59b28378c3f",
+        "urls": [
+          "bzz-raw://90fa0ca1d16b60bcd78dcef169cd0cabb8ac550c6acf3bbee0c3227aa777d281",
+          "dweb:/ipfs/QmXunoE29RKVP3FGNsMUa2K3DiMSBPNs8pu9FueqS5t71X"
+        ],
+        "license": "MIT"
+      },
+      "src/veKwentaRedeemer.sol": {
+        "keccak256": "0xc85839fd1d00b71e18d071c8dec1b9a1e9d7fd08458bf1f20084420ffa0074a3",
+        "urls": [
+          "bzz-raw://f0c4b52e43157f4790a93cbaed485cb12ba81e0faa5de4d116f1c40e50f3378c",
+          "dweb:/ipfs/QmSLhkKz3J3if6uMs31VnhRRWhh9Nd3a5tSaw49AN35fS7"
+        ],
+        "license": "MIT"
       }
     },
     "version": 1
   },
   "ast": {
     "absolutePath": "src/veKwentaRedeemer.sol",
-    "id": 23252,
+    "id": 24507,
     "exportedSymbols": {
+      "IERC20": [
+        23894
+      ],
+      "IRewardEscrow": [
+        24099
+      ],
+      "VestingEntries": [
+        23970
+      ],
       "veKwentaRedeemer": [
-        23251
+        24506
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:55:9",
+    "src": "32:4760:18",
     "nodes": [
       {
-        "id": 23250,
+        "id": 24345,
         "nodeType": "PragmaDirective",
-        "src": "39:24:9",
+        "src": "32:24:18",
         "nodes": [],
         "literals": [
           "solidity",
@@ -84,26 +473,2079 @@
         ]
       },
       {
-        "id": 23251,
-        "nodeType": "ContractDefinition",
-        "src": "65:28:9",
+        "id": 24346,
+        "nodeType": "ImportDirective",
+        "src": "58:46:18",
         "nodes": [],
+        "absolutePath": "lib/token/contracts/interfaces/IRewardEscrow.sol",
+        "file": "@kwenta/interfaces/IRewardEscrow.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 24507,
+        "sourceUnit": 24100,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 24348,
+        "nodeType": "ImportDirective",
+        "src": "105:69:18",
+        "nodes": [],
+        "absolutePath": "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol",
+        "file": "@openzeppelin/contracts/interfaces/IERC20.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 24507,
+        "sourceUnit": 23230,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 24347,
+              "name": "IERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 23894,
+              "src": "113:6:18",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 24506,
+        "nodeType": "ContractDefinition",
+        "src": "411:4380:18",
+        "nodes": [
+          {
+            "id": 24352,
+            "nodeType": "VariableDeclaration",
+            "src": "661:33:18",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 24350,
+              "nodeType": "StructuredDocumentation",
+              "src": "626:30:18",
+              "text": "@notice token to be burned"
+            },
+            "functionSelector": "a757fb49",
+            "mutability": "immutable",
+            "name": "veKwenta",
+            "nameLocation": "686:8:18",
+            "scope": 24506,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 24351,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "661:7:18",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 24355,
+            "nodeType": "VariableDeclaration",
+            "src": "780:31:18",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 24353,
+              "nodeType": "StructuredDocumentation",
+              "src": "701:74:18",
+              "text": "@notice token to be redeemed\n @dev token will be sent to escrow"
+            },
+            "functionSelector": "9034802b",
+            "mutability": "immutable",
+            "name": "kwenta",
+            "nameLocation": "805:6:18",
+            "scope": 24506,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 24354,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "780:7:18",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 24358,
+            "nodeType": "VariableDeclaration",
+            "src": "856:37:18",
+            "nodes": [],
+            "constant": false,
+            "documentation": {
+              "id": 24356,
+              "nodeType": "StructuredDocumentation",
+              "src": "818:33:18",
+              "text": "@notice reward escrow address"
+            },
+            "functionSelector": "a430be6c",
+            "mutability": "immutable",
+            "name": "rewardEscrow",
+            "nameLocation": "881:12:18",
+            "scope": 24506,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 24357,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "856:7:18",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "id": 24367,
+            "nodeType": "EventDefinition",
+            "src": "1364:124:18",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 24359,
+              "nodeType": "StructuredDocumentation",
+              "src": "1080:279:18",
+              "text": "@notice emitted when $veKWENTA is exchanged for $KWENTA\n @param redeemer: caller who exchanged $veKWENTA for $KWENTA\n @param beneficiary: account address used when creating escrow entry\n @param redeemedAmount: amount of $KWENTA redeemed and then escrowed"
+            },
+            "eventSelector": "27d4634c833b7622a0acddbf7f746183625f105945e95c723ad1d5a9f2a0b6fc",
+            "name": "Redeemed",
+            "nameLocation": "1370:8:18",
+            "parameters": {
+              "id": 24366,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24361,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "redeemer",
+                  "nameLocation": "1404:8:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24367,
+                  "src": "1388:24:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 24360,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1388:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24363,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "beneficiary",
+                  "nameLocation": "1438:11:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24367,
+                  "src": "1422:27:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 24362,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1422:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24365,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "redeemedAmount",
+                  "nameLocation": "1467:14:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24367,
+                  "src": "1459:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 24364,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1459:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1378:109:18"
+            }
+          },
+          {
+            "id": 24374,
+            "nodeType": "ErrorDefinition",
+            "src": "1841:66:18",
+            "nodes": [],
+            "documentation": {
+              "id": 24368,
+              "nodeType": "StructuredDocumentation",
+              "src": "1674:162:18",
+              "text": "@notice caller has no $veKWENTA to exchange\n @param caller: caller of the redeem() function\n @param callerBalance: caller's balance of $veKWENTA"
+            },
+            "errorSelector": "7bc7ff40",
+            "name": "InvalidCallerBalance",
+            "nameLocation": "1847:20:18",
+            "parameters": {
+              "id": 24373,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24370,
+                  "mutability": "mutable",
+                  "name": "caller",
+                  "nameLocation": "1876:6:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24374,
+                  "src": "1868:14:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 24369,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1868:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24372,
+                  "mutability": "mutable",
+                  "name": "callerBalance",
+                  "nameLocation": "1892:13:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24374,
+                  "src": "1884:21:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 24371,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1884:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1867:39:18"
+            }
+          },
+          {
+            "id": 24379,
+            "nodeType": "ErrorDefinition",
+            "src": "2046:54:18",
+            "nodes": [],
+            "documentation": {
+              "id": 24375,
+              "nodeType": "StructuredDocumentation",
+              "src": "1913:128:18",
+              "text": "@notice contract does not have enough $KWENTA to exchange\n @param contractBalance: veKwentaRedeemer's $KWENTA balance"
+            },
+            "errorSelector": "a6b317c3",
+            "name": "InvalidContractBalance",
+            "nameLocation": "2052:22:18",
+            "parameters": {
+              "id": 24378,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24377,
+                  "mutability": "mutable",
+                  "name": "contractBalance",
+                  "nameLocation": "2083:15:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24379,
+                  "src": "2075:23:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 24376,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2075:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2074:25:18"
+            }
+          },
+          {
+            "id": 24384,
+            "nodeType": "ErrorDefinition",
+            "src": "2219:37:18",
+            "nodes": [],
+            "documentation": {
+              "id": 24380,
+              "nodeType": "StructuredDocumentation",
+              "src": "2106:108:18",
+              "text": "@notice $veKWENTA transfer to this address failed\n @param caller: caller of the redeem() function"
+            },
+            "errorSelector": "39f1c8d9",
+            "name": "TransferFailed",
+            "nameLocation": "2225:14:18",
+            "parameters": {
+              "id": 24383,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24382,
+                  "mutability": "mutable",
+                  "name": "caller",
+                  "nameLocation": "2248:6:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24384,
+                  "src": "2240:14:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 24381,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2240:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2239:16:18"
+            }
+          },
+          {
+            "id": 24407,
+            "nodeType": "FunctionDefinition",
+            "src": "2665:202:18",
+            "nodes": [],
+            "body": {
+              "id": 24406,
+              "nodeType": "Block",
+              "src": "2766:101:18",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "id": 24396,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 24394,
+                      "name": "veKwenta",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24352,
+                      "src": "2776:8:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 24395,
+                      "name": "_veKwenta",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24387,
+                      "src": "2787:9:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "2776:20:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 24397,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2776:20:18"
+                },
+                {
+                  "expression": {
+                    "id": 24400,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 24398,
+                      "name": "kwenta",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24355,
+                      "src": "2806:6:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 24399,
+                      "name": "_kwenta",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24389,
+                      "src": "2815:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "2806:16:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 24401,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2806:16:18"
+                },
+                {
+                  "expression": {
+                    "id": 24404,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 24402,
+                      "name": "rewardEscrow",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24358,
+                      "src": "2832:12:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 24403,
+                      "name": "_rewardEscrow",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24391,
+                      "src": "2847:13:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "2832:28:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 24405,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2832:28:18"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 24385,
+              "nodeType": "StructuredDocumentation",
+              "src": "2447:213:18",
+              "text": "@notice establish necessary addresses\n @param _veKwenta: L2 token address of $veKWENTA\n @param _kwenta: L2 token address $KWENTA\n @param _rewardEscrow: address of reward escrow for $KWENTA"
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 24392,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24387,
+                  "mutability": "mutable",
+                  "name": "_veKwenta",
+                  "nameLocation": "2694:9:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24407,
+                  "src": "2686:17:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 24386,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2686:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24389,
+                  "mutability": "mutable",
+                  "name": "_kwenta",
+                  "nameLocation": "2721:7:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24407,
+                  "src": "2713:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 24388,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2713:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24391,
+                  "mutability": "mutable",
+                  "name": "_rewardEscrow",
+                  "nameLocation": "2746:13:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24407,
+                  "src": "2738:21:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 24390,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2738:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2676:89:18"
+            },
+            "returnParameters": {
+              "id": 24393,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2766:0:18"
+            },
+            "scope": 24506,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 24505,
+            "nodeType": "FunctionDefinition",
+            "src": "3319:1470:18",
+            "nodes": [],
+            "body": {
+              "id": 24504,
+              "nodeType": "Block",
+              "src": "3366:1423:18",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    24414
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 24414,
+                      "mutability": "mutable",
+                      "name": "callerveKwentaBalance",
+                      "nameLocation": "3436:21:18",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 24504,
+                      "src": "3428:29:18",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 24413,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "3428:7:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 24422,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 24419,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "3487:3:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 24420,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "3487:10:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 24416,
+                            "name": "veKwenta",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24352,
+                            "src": "3467:8:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 24415,
+                          "name": "IERC20",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 23894,
+                          "src": "3460:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IERC20_$23894_$",
+                            "typeString": "type(contract IERC20)"
+                          }
+                        },
+                        "id": 24417,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "3460:16:18",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IERC20_$23894",
+                          "typeString": "contract IERC20"
+                        }
+                      },
+                      "id": 24418,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "balanceOf",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 23851,
+                      "src": "3460:26:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) view external returns (uint256)"
+                      }
+                    },
+                    "id": 24421,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3460:38:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "3428:70:18"
+                },
+                {
+                  "assignments": [
+                    24424
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 24424,
+                      "mutability": "mutable",
+                      "name": "contractKwentaBalance",
+                      "nameLocation": "3516:21:18",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 24504,
+                      "src": "3508:29:18",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 24423,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "3508:7:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 24434,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 24431,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -28,
+                            "src": "3573:4:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_veKwentaRedeemer_$24506",
+                              "typeString": "contract veKwentaRedeemer"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_veKwentaRedeemer_$24506",
+                              "typeString": "contract veKwentaRedeemer"
+                            }
+                          ],
+                          "id": 24430,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "3565:7:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 24429,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "3565:7:18",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 24432,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "3565:13:18",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 24426,
+                            "name": "kwenta",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24355,
+                            "src": "3547:6:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 24425,
+                          "name": "IERC20",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 23894,
+                          "src": "3540:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IERC20_$23894_$",
+                            "typeString": "type(contract IERC20)"
+                          }
+                        },
+                        "id": 24427,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "3540:14:18",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IERC20_$23894",
+                          "typeString": "contract IERC20"
+                        }
+                      },
+                      "id": 24428,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "balanceOf",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 23851,
+                      "src": "3540:24:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) view external returns (uint256)"
+                      }
+                    },
+                    "id": 24433,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3540:39:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "3508:71:18"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 24437,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 24435,
+                      "name": "callerveKwentaBalance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24414,
+                      "src": "3637:21:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "hexValue": "30",
+                      "id": 24436,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "3662:1:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "src": "3637:26:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "documentation": "ensure valid $veKWENTA balance",
+                  "id": 24445,
+                  "nodeType": "IfStatement",
+                  "src": "3633:190:18",
+                  "trueBody": {
+                    "id": 24444,
+                    "nodeType": "Block",
+                    "src": "3665:158:18",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [
+                            {
+                              "expression": {
+                                "id": 24439,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": -15,
+                                "src": "3733:3:18",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 24440,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "src": "3733:10:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            {
+                              "id": 24441,
+                              "name": "callerveKwentaBalance",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 24414,
+                              "src": "3776:21:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "id": 24438,
+                            "name": "InvalidCallerBalance",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24374,
+                            "src": "3686:20:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$_t_address_$_t_uint256_$returns$__$",
+                              "typeString": "function (address,uint256) pure"
+                            }
+                          },
+                          "id": 24442,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [
+                            "caller",
+                            "callerBalance"
+                          ],
+                          "nodeType": "FunctionCall",
+                          "src": "3686:126:18",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 24443,
+                        "nodeType": "RevertStatement",
+                        "src": "3679:133:18"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 24448,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 24446,
+                      "name": "callerveKwentaBalance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24414,
+                      "src": "3878:21:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": ">",
+                    "rightExpression": {
+                      "id": 24447,
+                      "name": "contractKwentaBalance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24424,
+                      "src": "3902:21:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "3878:45:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "documentation": "ensure valid $KWENTA balance",
+                  "id": 24454,
+                  "nodeType": "IfStatement",
+                  "src": "3874:177:18",
+                  "trueBody": {
+                    "id": 24453,
+                    "nodeType": "Block",
+                    "src": "3925:126:18",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [
+                            {
+                              "id": 24450,
+                              "name": "contractKwentaBalance",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 24424,
+                              "src": "4004:21:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            ],
+                            "id": 24449,
+                            "name": "InvalidContractBalance",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24379,
+                            "src": "3946:22:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$_t_uint256_$returns$__$",
+                              "typeString": "function (uint256) pure"
+                            }
+                          },
+                          "id": 24451,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [
+                            "contractBalance"
+                          ],
+                          "nodeType": "FunctionCall",
+                          "src": "3946:94:18",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 24452,
+                        "nodeType": "RevertStatement",
+                        "src": "3939:101:18"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "assignments": [
+                    24457
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 24457,
+                      "mutability": "mutable",
+                      "name": "success",
+                      "nameLocation": "4110:7:18",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 24504,
+                      "src": "4105:12:18",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "typeName": {
+                        "id": 24456,
+                        "name": "bool",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "4105:4:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "documentation": "lock $veKWENTA in this contract",
+                  "id": 24470,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 24462,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "4163:3:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 24463,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "4163:10:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "id": 24466,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -28,
+                            "src": "4195:4:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_veKwentaRedeemer_$24506",
+                              "typeString": "contract veKwentaRedeemer"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_veKwentaRedeemer_$24506",
+                              "typeString": "contract veKwentaRedeemer"
+                            }
+                          ],
+                          "id": 24465,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "4187:7:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 24464,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "4187:7:18",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 24467,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "4187:13:18",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 24468,
+                        "name": "callerveKwentaBalance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 24414,
+                        "src": "4214:21:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 24459,
+                            "name": "veKwenta",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24352,
+                            "src": "4127:8:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 24458,
+                          "name": "IERC20",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 23894,
+                          "src": "4120:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IERC20_$23894_$",
+                            "typeString": "type(contract IERC20)"
+                          }
+                        },
+                        "id": 24460,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "4120:16:18",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IERC20_$23894",
+                          "typeString": "contract IERC20"
+                        }
+                      },
+                      "id": 24461,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferFrom",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 23893,
+                      "src": "4120:29:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 24469,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4120:125:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "4105:140:18"
+                },
+                {
+                  "condition": {
+                    "id": 24472,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "4296:8:18",
+                    "subExpression": {
+                      "id": 24471,
+                      "name": "success",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24457,
+                      "src": "4297:7:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 24479,
+                  "nodeType": "IfStatement",
+                  "src": "4292:82:18",
+                  "trueBody": {
+                    "id": 24478,
+                    "nodeType": "Block",
+                    "src": "4306:68:18",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [
+                            {
+                              "expression": {
+                                "id": 24474,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": -15,
+                                "src": "4351:3:18",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 24475,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "src": "4351:10:18",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 24473,
+                            "name": "TransferFailed",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24384,
+                            "src": "4327:14:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$_t_address_$returns$__$",
+                              "typeString": "function (address) pure"
+                            }
+                          },
+                          "id": 24476,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [
+                            "caller"
+                          ],
+                          "nodeType": "FunctionCall",
+                          "src": "4327:36:18",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 24477,
+                        "nodeType": "RevertStatement",
+                        "src": "4320:43:18"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 24484,
+                        "name": "rewardEscrow",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 24358,
+                        "src": "4438:12:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 24485,
+                        "name": "callerveKwentaBalance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 24414,
+                        "src": "4452:21:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 24481,
+                            "name": "kwenta",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24355,
+                            "src": "4422:6:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 24480,
+                          "name": "IERC20",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 23894,
+                          "src": "4415:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IERC20_$23894_$",
+                            "typeString": "type(contract IERC20)"
+                          }
+                        },
+                        "id": 24482,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "4415:14:18",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IERC20_$23894",
+                          "typeString": "contract IERC20"
+                        }
+                      },
+                      "id": 24483,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "approve",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 23881,
+                      "src": "4415:22:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 24486,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4415:59:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 24487,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4415:59:18"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 24492,
+                        "name": "_beneficiary",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 24410,
+                        "src": "4543:12:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 24493,
+                        "name": "callerveKwentaBalance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 24414,
+                        "src": "4569:21:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "hexValue": "3532",
+                        "id": 24494,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "4604:8:18",
+                        "subdenomination": "weeks",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_31449600_by_1",
+                          "typeString": "int_const 31449600"
+                        },
+                        "value": "52"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_31449600_by_1",
+                          "typeString": "int_const 31449600"
+                        }
+                      ],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 24489,
+                            "name": "rewardEscrow",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24358,
+                            "src": "4498:12:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 24488,
+                          "name": "IRewardEscrow",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 24099,
+                          "src": "4484:13:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_IRewardEscrow_$24099_$",
+                            "typeString": "type(contract IRewardEscrow)"
+                          }
+                        },
+                        "id": 24490,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "4484:27:18",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IRewardEscrow_$24099",
+                          "typeString": "contract IRewardEscrow"
+                        }
+                      },
+                      "id": 24491,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "createEscrowEntry",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 24079,
+                      "src": "4484:45:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256,uint256) external"
+                      }
+                    },
+                    "id": 24495,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4484:138:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 24496,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4484:138:18"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 24498,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "4671:3:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 24499,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "4671:10:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 24500,
+                        "name": "_beneficiary",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 24410,
+                        "src": "4708:12:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 24501,
+                        "name": "callerveKwentaBalance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 24414,
+                        "src": "4750:21:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 24497,
+                      "name": "Redeemed",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24367,
+                      "src": "4638:8:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,address,uint256)"
+                      }
+                    },
+                    "id": 24502,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [
+                      "redeemer",
+                      "beneficiary",
+                      "redeemedAmount"
+                    ],
+                    "nodeType": "FunctionCall",
+                    "src": "4638:144:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 24503,
+                  "nodeType": "EmitStatement",
+                  "src": "4633:149:18"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 24408,
+              "nodeType": "StructuredDocumentation",
+              "src": "3069:245:18",
+              "text": "@notice exchange caller's $veKWENTA for $KWENTA\n @dev $KWENTA will be sent to reward escrow\n @dev caller must approve this contract to spend $veKWENTA\n @param _beneficiary: account address used when creating escrow entry"
+            },
+            "functionSelector": "95a2251f",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "redeem",
+            "nameLocation": "3328:6:18",
+            "parameters": {
+              "id": 24411,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24410,
+                  "mutability": "mutable",
+                  "name": "_beneficiary",
+                  "nameLocation": "3343:12:18",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24505,
+                  "src": "3335:20:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 24409,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3335:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3334:22:18"
+            },
+            "returnParameters": {
+              "id": 24412,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3366:0:18"
+            },
+            "scope": 24506,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
         "abstract": false,
         "baseContracts": [],
         "canonicalName": "veKwentaRedeemer",
         "contractDependencies": [],
         "contractKind": "contract",
+        "documentation": {
+          "id": 24349,
+          "nodeType": "StructuredDocumentation",
+          "src": "176:235:18",
+          "text": "@title $veKWENTA redeemer for $KWENTA (Optimism)\n @author JaredBorders (jaredborders@proton.me)\n @notice exchanges $veKWENTA for equal amount of $KWENTA\n and creates reward escrow entry for address specified by the caller"
+        },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          23251
+          24506
         ],
         "name": "veKwentaRedeemer",
-        "nameLocation": "74:16:9",
-        "scope": 23252,
-        "usedErrors": []
+        "nameLocation": "420:16:18",
+        "scope": 24507,
+        "usedErrors": [
+          24374,
+          24379,
+          24384
+        ]
       }
     ],
-    "license": "UNLICENSED"
+    "license": "MIT"
   },
-  "id": 9
+  "id": 18
 }
