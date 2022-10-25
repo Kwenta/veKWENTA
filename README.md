@@ -16,7 +16,7 @@ src/L2veKwenta.sol ^0.8.13
 │   ├── lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol ^0.8.0
 │   └── lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol ^0.8.0
 ├── src/libraries/Lib_PredeployAddresses.sol ^0.8.13
-└── lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol ^0.8.0 (*)
+└── lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol ^0.8.0
 src/veKwentaRedeemer.sol ^0.8.13
 ├── lib/token/contracts/interfaces/IRewardEscrow.sol ^0.8.0
 └── lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol ^0.8.0
