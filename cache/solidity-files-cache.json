@@ -925,8 +925,8 @@
       }
     },
     "test/L2veKwenta.t.sol": {
-      "lastModificationDate": 1666715528232,
-      "contentHash": "cf1787170d882b4f4b9a47bdedec9164",
+      "lastModificationDate": 1666716455314,
+      "contentHash": "f12e30596b15878cec31c9c93c016830",
       "sourceName": "test/L2veKwenta.t.sol",
       "solcConfig": {
         "settings": {
@@ -980,9 +980,54 @@
         }
       }
     },
+    "test/mock/MockERC20.sol": {
+      "lastModificationDate": 1666718748120,
+      "contentHash": "e1d8375c561d61cfedd75d6ebb889227",
+      "sourceName": "test/mock/MockERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "MockERC20": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "MockERC20.sol/MockERC20.json"
+        }
+      }
+    },
     "test/veKwentaRedeemer.t.sol": {
-      "lastModificationDate": 1666713201945,
-      "contentHash": "a365d1c6cbf7eb8b9d594b5fd17e6a10",
+      "lastModificationDate": 1666720082067,
+      "contentHash": "7e2f6acd1894ca6df5d2ecae203bbd37",
       "sourceName": "test/veKwentaRedeemer.t.sol",
       "solcConfig": {
         "settings": {
@@ -1021,9 +1066,17 @@
         "lib/forge-std/src/console.sol",
         "lib/forge-std/src/console2.sol",
         "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
         "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
         "lib/token/contracts/interfaces/IRewardEscrow.sol",
-        "src/veKwentaRedeemer.sol"
+        "src/L2veKwenta.sol",
+        "src/interfaces/IL2StandardERC20.sol",
+        "src/libraries/Lib_PredeployAddresses.sol",
+        "src/veKwentaRedeemer.sol",
+        "test/mock/MockERC20.sol"
       ],
       "versionRequirement": "^0.8.13",
       "artifacts": {

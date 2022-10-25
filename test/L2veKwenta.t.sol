@@ -9,7 +9,7 @@ contract L2veKwentaTest is Test {
     address private constant L2_STANDARD_BRIDGE =
         0x4200000000000000000000000000000000000010;
 
-    L2veKwenta veKwenta;
+    L2veKwenta private veKwenta;
 
     address private constant EOA = 0xc625F59d51ecDff57FEFE535C80d318CA42A0Ec4;
 
@@ -27,11 +27,11 @@ contract L2veKwentaTest is Test {
         });
     }
 
-    function testL1TokenSet(uint256 amountToMint) public {
+    function testL1TokenSet() public {
         assertEq(veKwenta.l1Token(), L1Token);
     }
 
-    function testL2BridgeSet(uint256 amountToMint) public {
+    function testL2BridgeSet() public {
         assertEq(veKwenta.l2Bridge(), L2_STANDARD_BRIDGE);
     }
 
