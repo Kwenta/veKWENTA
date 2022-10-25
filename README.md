@@ -5,19 +5,22 @@ Used for the $KWENTA token distribution as described in https://kips.kwenta.io/k
 ## Contracts
 
 ```ml
-script/Deploy.s.sol ^0.8.13
-└── lib/forge-std/src/Script.sol >=0.6.0 <0.9.0
-    ├── lib/forge-std/src/console.sol >=0.4.22 <0.9.0
-    ├── lib/forge-std/src/console2.sol >=0.4.22 <0.9.0
-    └── lib/forge-std/src/StdJson.sol >=0.6.0 <0.9.0
-        └── lib/forge-std/src/Vm.sol >=0.6.0 <0.9.0
-src/veKwenta.sol ^0.8.13
+src/L1veKwenta.sol ^0.8.13
+└── lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol ^0.8.0
+    ├── lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol ^0.8.0
+    ├── lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol ^0.8.0
+    │   └── lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol ^0.8.0
+    └── lib/openzeppelin-contracts/contracts/utils/Context.sol ^0.8.0
+src/L2veKwenta.sol ^0.8.13
+├── src/interfaces/IL2StandardERC20.sol ^0.8.13
+│   ├── lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol ^0.8.0
+│   └── lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol ^0.8.0
+├── src/libraries/Lib_PredeployAddresses.sol ^0.8.13
+└── lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol ^0.8.0 (*)
 src/veKwentaRedeemer.sol ^0.8.13
-test/veKwenta.t.sol ^0.8.13
-├── lib/forge-std/src/Test.sol >=0.6.0 <0.9.0
-│   ├── lib/forge-std/src/Script.sol >=0.6.0 <0.9.0 (*)
-│   └── lib/forge-std/lib/ds-test/src/test.sol >=0.5.0
-└── src/veKwenta.sol ^0.8.13
+├── lib/token/contracts/interfaces/IRewardEscrow.sol ^0.8.0
+└── lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol ^0.8.0
+    └── lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol ^0.8.0
 ```
 
 ## Specs
@@ -62,7 +65,7 @@ test/veKwenta.t.sol ^0.8.13
 * $veKWENTA can be used to redeem $KWENTA which will then be sent to escrow
 
 ## Code Coverage
-```
+```ml
 +--------------------------+----------------+----------------+---------------+---------------+
 | File                     | % Lines        | % Statements   | % Branches    | % Funcs       |
 +============================================================================================+
