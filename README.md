@@ -1,8 +1,16 @@
 # veKwenta
 
-[![CI][ci-shield]][ci-url]
-[![MIT License][license-shield]][license-url]
-[![Foundry][license-shield]][foundry-badge]
+[![Github Actions][gha-badge]][gha] 
+[![Foundry][foundry-badge]][foundry] 
+[![License: MIT][license-badge]][license]
+
+[gha]: https://github.com/paulrberg/foundry-template/actions
+[gha-badge]: https://github.com/paulrberg/foundry-template/actions/workflows/ci.yml/badge.svg
+[foundry]: https://getfoundry.sh/
+[foundry-badge]: https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg
+[license]: https://opensource.org/licenses/MIT
+[license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
+
 
 Used for the $KWENTA token distribution as described in https://kips.kwenta.io/kips/kip-34/. Should not be confused as 'vote escrowed' $KWENTA.
 
@@ -143,12 +151,3 @@ test/veKwentaRedeemer.t.sol ^0.8.13
 ### L2
 
 @todo
-
-[ci-shield]: https://img.shields.io/github/workflow/status/kwenta/veKwenta/ci?label=build
-[ci-url]: https://github.com/kwenta/veKwenta/actions/workflows/ci.yml
-
-[license]: https://opensource.org/licenses/MIT
-[license-badge]: https://img.shields.io/badge/License-MIT-blue.svg
-
-[foundry-shield]: https://getfoundry.sh/
-[foundry-badge]: https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg
