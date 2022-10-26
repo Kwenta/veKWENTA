@@ -605,10 +605,10 @@
         }
       }
     },
-    "script/Deploy.s.sol": {
-      "lastModificationDate": 1666304512064,
-      "contentHash": "dbe87f4e2c2eea60e53bba8238ff66bb",
-      "sourceName": "script/Deploy.s.sol",
+    "script/L1/GoerliDeployL1veKwenta.s.sol": {
+      "lastModificationDate": 1666808608617,
+      "contentHash": "5fc7097c434f7c371edbb363977204ab",
+      "sourceName": "script/L1/GoerliDeployL1veKwenta.s.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -642,12 +642,276 @@
         "lib/forge-std/src/StdJson.sol",
         "lib/forge-std/src/Vm.sol",
         "lib/forge-std/src/console.sol",
-        "lib/forge-std/src/console2.sol"
+        "lib/forge-std/src/console2.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "src/L1veKwenta.sol"
       ],
       "versionRequirement": "^0.8.13",
       "artifacts": {
-        "Deploy": {
-          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "Deploy.s.sol/Deploy.json"
+        "GoerliDeployL1veKwenta": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "GoerliDeployL1veKwenta.s.sol/GoerliDeployL1veKwenta.json"
+        }
+      }
+    },
+    "script/L1/MainnetDeployL1veKwenta.s.sol": {
+      "lastModificationDate": 1666808613154,
+      "contentHash": "6b8a2456fde4f549f956804d4285b782",
+      "sourceName": "script/L1/MainnetDeployL1veKwenta.s.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "src/L1veKwenta.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "MainnetDeployL1veKwenta": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "MainnetDeployL1veKwenta.s.sol/MainnetDeployL1veKwenta.json"
+        }
+      }
+    },
+    "script/L2/OptimismDeployL2veKwenta.s.sol": {
+      "lastModificationDate": 1666808599148,
+      "contentHash": "96a2c129a8af579854034feae7433b45",
+      "sourceName": "script/L2/OptimismDeployL2veKwenta.s.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "src/L2veKwenta.sol",
+        "src/interfaces/IL2StandardERC20.sol",
+        "src/libraries/Lib_PredeployAddresses.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "OptimismDeployL2veKwenta": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "OptimismDeployL2veKwenta.s.sol/OptimismDeployL2veKwenta.json"
+        }
+      }
+    },
+    "script/L2/OptimismDeployRedeemer.s.sol": {
+      "lastModificationDate": 1666808192724,
+      "contentHash": "9009dc0dda2ab35540b6132d3e6dde23",
+      "sourceName": "script/L2/OptimismDeployRedeemer.s.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/token/contracts/interfaces/IRewardEscrow.sol",
+        "src/veKwentaRedeemer.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "OptimismDeployRedeemer": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "OptimismDeployRedeemer.s.sol/OptimismDeployRedeemer.json"
+        }
+      }
+    },
+    "script/L2/OptimismGoerliDeployL2veKwenta.s.sol": {
+      "lastModificationDate": 1666808351728,
+      "contentHash": "2e208d3f0f2c640b76d6d6bffa0252f2",
+      "sourceName": "script/L2/OptimismGoerliDeployL2veKwenta.s.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "src/L2veKwenta.sol",
+        "src/interfaces/IL2StandardERC20.sol",
+        "src/libraries/Lib_PredeployAddresses.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "OptimismGoerliDeployL2veKwenta": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "OptimismGoerliDeployL2veKwenta.s.sol/OptimismGoerliDeployL2veKwenta.json"
+        }
+      }
+    },
+    "script/L2/OptimismGoerliDeployRedeemer.s.sol": {
+      "lastModificationDate": 1666808584740,
+      "contentHash": "b8d5d961153250e9c6fffccdc81596d6",
+      "sourceName": "script/L2/OptimismGoerliDeployRedeemer.s.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/token/contracts/interfaces/IRewardEscrow.sol",
+        "src/veKwentaRedeemer.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "OptimismGoerliDeployRedeemer": {
+          "0.8.13+commit.abaa5c0e.Darwin.appleclang": "OptimismGoerliDeployRedeemer.s.sol/OptimismGoerliDeployRedeemer.json"
         }
       }
     },
@@ -828,7 +1092,7 @@
       }
     },
     "src/veKwentaRedeemer.sol": {
-      "lastModificationDate": 1666642116142,
+      "lastModificationDate": 1666720298442,
       "contentHash": "d3f6077383d9a653c12fbbdefeee2e8e",
       "sourceName": "src/veKwentaRedeemer.sol",
       "solcConfig": {
@@ -925,8 +1189,8 @@
       }
     },
     "test/L2veKwenta.t.sol": {
-      "lastModificationDate": 1666716455314,
-      "contentHash": "f12e30596b15878cec31c9c93c016830",
+      "lastModificationDate": 1666808695762,
+      "contentHash": "fb4ffa0bc04f08e8a724c576eec24b7a",
       "sourceName": "test/L2veKwenta.t.sol",
       "solcConfig": {
         "settings": {
@@ -981,7 +1245,7 @@
       }
     },
     "test/mock/MockERC20.sol": {
-      "lastModificationDate": 1666718748120,
+      "lastModificationDate": 1666720103093,
       "contentHash": "e1d8375c561d61cfedd75d6ebb889227",
       "sourceName": "test/mock/MockERC20.sol",
       "solcConfig": {

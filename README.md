@@ -17,7 +17,7 @@ Used for the $KWENTA token distribution as described in https://kips.kwenta.io/k
 ## Contracts
 
 ```
-script/GoerliDeploy.s.sol ^0.8.13
+script/L1/GoerliDeployL1veKwenta.s.sol ^0.8.13
 ├── lib/forge-std/src/Script.sol >=0.6.0 <0.9.0
 │   ├── lib/forge-std/src/console.sol >=0.4.22 <0.9.0
 │   ├── lib/forge-std/src/console2.sol >=0.4.22 <0.9.0
@@ -29,24 +29,28 @@ script/GoerliDeploy.s.sol ^0.8.13
         ├── lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol ^0.8.0
         │   └── lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol ^0.8.0
         └── lib/openzeppelin-contracts/contracts/utils/Context.sol ^0.8.0
-script/MainnetDeploy.s.sol ^0.8.13
+script/L1/MainnetDeployL1veKwenta.s.sol ^0.8.13
 ├── lib/forge-std/src/Script.sol >=0.6.0 <0.9.0 (*)
 └── src/L1veKwenta.sol ^0.8.13 (*)
-script/OptimismDeploy.s.sol ^0.8.13
+script/L2/OptimismDeployL2veKwenta.s.sol ^0.8.13
 ├── lib/forge-std/src/Script.sol >=0.6.0 <0.9.0 (*)
-├── src/L2veKwenta.sol ^0.8.13
-│   ├── src/interfaces/IL2StandardERC20.sol ^0.8.13
-│   │   ├── lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol ^0.8.0
-│   │   └── lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol ^0.8.0
-│   ├── src/libraries/Lib_PredeployAddresses.sol ^0.8.13
-│   └── lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol ^0.8.0 (*)
+└── src/L2veKwenta.sol ^0.8.13
+    ├── src/interfaces/IL2StandardERC20.sol ^0.8.13
+    │   ├── lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol ^0.8.0
+    │   └── lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol ^0.8.0
+    ├── src/libraries/Lib_PredeployAddresses.sol ^0.8.13
+    └── lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol ^0.8.0 (*)
+script/L2/OptimismDeployRedeemer.s.sol ^0.8.13
+├── lib/forge-std/src/Script.sol >=0.6.0 <0.9.0 (*)
 └── src/veKwentaRedeemer.sol ^0.8.13
     ├── lib/token/contracts/interfaces/IRewardEscrow.sol ^0.8.0
     └── lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol ^0.8.0
         └── lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol ^0.8.0
-script/OptimismGoerliDeploy.s.sol ^0.8.13
+script/L2/OptimismGoerliDeployL2veKwenta.s.sol ^0.8.13
 ├── lib/forge-std/src/Script.sol >=0.6.0 <0.9.0 (*)
-├── src/L2veKwenta.sol ^0.8.13 (*)
+└── src/L2veKwenta.sol ^0.8.13 (*)
+script/L2/OptimismGoerliDeployRedeemer.s.sol ^0.8.13
+├── lib/forge-std/src/Script.sol >=0.6.0 <0.9.0 (*)
 └── src/veKwentaRedeemer.sol ^0.8.13 (*)
 src/L1veKwenta.sol ^0.8.13 (*)
 src/L2veKwenta.sol ^0.8.13 (*)
