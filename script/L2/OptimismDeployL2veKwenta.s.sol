@@ -13,7 +13,7 @@ contract OptimismDeployL2veKwenta is Script {
     L2veKwenta veKwenta;
 
     // L2veKwenta constructor arguments
-    address private constant L1_TOKEN_ADDRESS = address(0); // @TODO
+    address private constant L1_TOKEN_ADDRESS = 0x6789D8a7a7871923Fc6430432A602879eCB6520a;
     string private constant NAME = "veKwenta";
     string private constant SYMBOL = "veKWENTA";
 

@@ -143,14 +143,14 @@ test/veKwentaRedeemer.t.sol ^0.8.13
 ### L1
 
 #### Mainnet
-L1veKwenta.sol: tbd
+L1veKwenta.sol: `https://etherscan.io/address/0x6789d8a7a7871923fc6430432a602879ecb6520a`
 #### Goerli
 L1veKwenta.sol: `https://goerli.etherscan.io/address/0xf36c9a9E8333663F8CA3608C5582916628E79e3f`
 
 ### L2
 
 #### Optimism
-L2veKwenta.sol: tbd
+L2veKwenta.sol: `https://optimistic.etherscan.io/address/0x678d8f4ba8dfe6bad51796351824dcceceaeff2b`
 veKwentaRedeemer: tbd
 #### Optimism Goerli
 L2veKwenta.sol: `https://goerli-optimism.etherscan.io/address/0x3e52b5f840eafd79394c6359e93bf3ffdae89ee4`

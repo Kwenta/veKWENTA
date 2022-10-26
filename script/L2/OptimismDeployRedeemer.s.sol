@@ -13,7 +13,7 @@ contract OptimismDeployRedeemer is Script {
     veKwentaRedeemer redeemer;
 
     // veKwentaRedeemer constructor arguments
-    address private constant veKWENTA_ADDRESS = address(0); // @TODO
+    address private constant veKWENTA_ADDRESS = 0x678d8f4Ba8DFE6bad51796351824DcCECeAefF2B;
     address private constant KWENTA_ADDRESS = address(0); // @TODO
     address private constant REWARD_ESCROW_ADDRESS = address(0); // @TODO
 
