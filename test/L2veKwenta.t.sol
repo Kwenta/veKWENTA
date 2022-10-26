@@ -35,7 +35,7 @@ contract L2veKwentaTest is Test {
         assertEq(veKwenta.l2Bridge(), L2_STANDARD_BRIDGE);
     }
 
-    function testL2veKwentaSupportsFirstInterface() public {
+    function testL2veKwentaSupportsFirstInterface() public view {
         bytes4 supportedInterface = bytes4(
             keccak256("supportsInterface(bytes4)")
         );
@@ -43,7 +43,7 @@ contract L2veKwentaTest is Test {
         assert(supportsInterface);
     }
 
-    function testL2veKwentaSupportsSecondInterface() public {
+    function testL2veKwentaSupportsSecondInterface() public view {
         bytes4 supportedInterface = IL2StandardERC20.l1Token.selector ^
             IL2StandardERC20.mint.selector ^
             IL2StandardERC20.burn.selector;
