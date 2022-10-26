@@ -155,3 +155,22 @@ veKwentaRedeemer: tbd
 #### Optimism Goerli
 L2veKwenta.sol: `https://goerli-optimism.etherscan.io/address/0x3e52b5f840eafd79394c6359e93bf3ffdae89ee4`<br>
 veKwentaRedeemer: tbd
+
+## Getting Started
+
+```
+$ git clone git@github.com:Kwenta/veKWENTA.git
+$ cd veKWENTA
+$ forge install
+```
+
+We run forge install to install the submodule dependencies that are in the project.
+<br>
+To build, use forge build:
+```
+$ forge build
+```
+And to test, use forge test:
+```
+$ forge test
+```
