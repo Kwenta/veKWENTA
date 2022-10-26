@@ -13,8 +13,8 @@ contract GoerliDeployL1veKwenta is Script {
     L1veKwenta veKwenta;
 
     // constructor arguments
-    address private constant MINT_TO_ADDRESS = address(0); // @TODO
-    uint256 private constant AMOUNT_TO_MINT = 0; // @TODO
+    address private constant MINT_TO_ADDRESS = 0x652c46a302060B324A02d2d3e4a56e3DA07FA91b;
+    uint256 private constant AMOUNT_TO_MINT = ((313373 ether * 35) / 100); // 109,680.55 ether
     string private constant NAME = "veKwenta";
     string private constant SYMBOL = "veKWENTA";
 

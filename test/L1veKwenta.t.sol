@@ -5,7 +5,7 @@ import "forge-std/Test.sol";
 import "../src/L1veKwenta.sol";
 
 contract L1veKwentaTest is Test {
-    uint256 private constant KWENTA_SUPPLY = 313373;
+    uint256 private constant KWENTA_SUPPLY = 313373 ether;
 
     // constructor params
     address private constant mintToAddress =
