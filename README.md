@@ -158,13 +158,16 @@ veKwentaRedeemer: tbd
 
 ## Getting Started
 
-Clone `veKwenta`:
+Clone the repository:
 ```
 $ git clone git@github.com:Kwenta/veKWENTA.git
 $ cd veKWENTA
+```
+
+Install project submodule dependencies:
+```
 $ forge install
 ```
-> We run forge install to install the submodule dependencies that are in the project.
 
 To build, use forge build:
 ```
