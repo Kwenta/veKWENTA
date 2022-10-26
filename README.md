@@ -80,14 +80,14 @@ test/veKwentaRedeemer.t.sol ^0.8.13
 ### Introduction
 
 -  The Kwenta DAO will host one Aelin pool with 35% of the initial supply which will enable eligible addresses to purchase $veKWENTA (for a discounted price relative to $KWENTA) on Optimism (L2)
+-  After purchasing $veKWENTA, the user can bridge $veKWENTA to Optimism via the [Optimism Gateway Portal](https://gateway.optimism.io/)
 -  $veKWENTA can then be exchanged for $KWENTA with a 1-year vesting period _on L2_ via the `veKwentaRedeemer.sol`
 -  Eligible addresses include both EOA's and contract addresses
--  After purchasing $veKWENTA, the user can bridge $veKWENTA to Optimism via the [Optimism Gateway Portal](https://gateway.optimism.io/)
 
 ### $veKWENTA
 
 -  Initial supply will be deployed and minted on L1
--  Supply can be purchased by eligible addresses from the Aelin pool on both L1 ONLY
+-  Supply can be purchased by eligible addresses from the Aelin pool on L1 ONLY
 -  Used to later claim $KWENTA
 -  Token implements [IL2StandardERC20](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts/contracts/standards/IL2StandardERC20.sol) to allow for bridging to Optimism via the [Optimism Gateway Portal](https://gateway.optimism.io/)
 -  L2 compatibility achieved following guide described [here](https://github.com/ethereum-optimism/optimism-tutorial/tree/main/standard-bridge-standard-token#deploying-a-standard-token)
@@ -96,12 +96,12 @@ test/veKwentaRedeemer.t.sol ^0.8.13
 
 -  Merkle tree (and derived root) for Aelin pool on L1 will contain all eligible addresses which can purchase $veKWENTA and how much they are allowed to buy
 -  Pool will exchange $sUSD for $veKWENTA
--  Pool details defined by Aelin
+-  Further pool details defined by Aelin
 
 ### Claiming Mechanism 
 
 -  Whitelisted addresss will purchase $veKWENTA
--  $veKWENTA must then be bridged to Optimism where it can be exchanged for $KWENTA
+-  $veKWENTA must then be bridged to Optimism
 -  $veKWENTA can be used to redeem $KWENTA which will then be sent to escrow
 
 ## Code Coverage
@@ -150,8 +150,8 @@ L1veKwenta.sol: `https://goerli.etherscan.io/address/0xf36c9a9E8333663F8CA3608C5
 ### L2
 
 #### Optimism
-L2veKwenta.sol: `https://optimistic.etherscan.io/address/0x678d8f4ba8dfe6bad51796351824dcceceaeff2b`
+L2veKwenta.sol: `https://optimistic.etherscan.io/address/0x678d8f4ba8dfe6bad51796351824dcceceaeff2b`<br>
 veKwentaRedeemer: tbd
 #### Optimism Goerli
-L2veKwenta.sol: `https://goerli-optimism.etherscan.io/address/0x3e52b5f840eafd79394c6359e93bf3ffdae89ee4`
+L2veKwenta.sol: `https://goerli-optimism.etherscan.io/address/0x3e52b5f840eafd79394c6359e93bf3ffdae89ee4`<br>
 veKwentaRedeemer: tbd
