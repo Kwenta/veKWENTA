@@ -135,7 +135,7 @@ test/veKwentaRedeemer.t.sol ^0.8.13
 ## Diagram
 
 <p align="center">
-  <img src="/veKWENTA_1.jpg" width="800" height="800" alt="veKwenta"/>
+  <img src="/veKwentaDiagram.png" width="800" height="800" alt="veKwenta"/>
 </p>
 
 ## Deployment Addresses
