@@ -151,10 +151,9 @@ L1veKwenta.sol: `https://goerli.etherscan.io/address/0xf36c9a9E8333663F8CA3608C5
 
 #### Optimism
 L2veKwenta.sol: `https://optimistic.etherscan.io/address/0x678d8f4ba8dfe6bad51796351824dcceceaeff2b`<br>
-veKwentaRedeemer: tbd
+veKwentaRedeemer: `https://optimistic.etherscan.io/address/0xc7088AC8F287539567e458C7D08C2a1470Fd25B7`<br>
 #### Optimism Goerli
 L2veKwenta.sol: `https://goerli-optimism.etherscan.io/address/0x3e52b5f840eafd79394c6359e93bf3ffdae89ee4`<br>
-veKwentaRedeemer: tbd
 
 ## Getting Started
 

@@ -14,8 +14,8 @@ contract OptimismDeployRedeemer is Script {
 
     // veKwentaRedeemer constructor arguments
     address private constant veKWENTA_ADDRESS = 0x678d8f4Ba8DFE6bad51796351824DcCECeAefF2B;
-    address private constant KWENTA_ADDRESS = address(0); // @TODO
-    address private constant REWARD_ESCROW_ADDRESS = address(0); // @TODO
+    address private constant KWENTA_ADDRESS = 0x920Cf626a271321C151D027030D5d08aF699456b;
+    address private constant REWARD_ESCROW_ADDRESS = 0x1066A8eB3d90Af0Ad3F89839b974658577e75BE2;
 
     function run() public {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
