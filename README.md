@@ -154,6 +154,7 @@ L2veKwenta.sol: `https://optimistic.etherscan.io/address/0x678d8f4ba8dfe6bad5179
 veKwentaRedeemer: `https://optimistic.etherscan.io/address/0xc7088AC8F287539567e458C7D08C2a1470Fd25B7`<br>
 #### Optimism Goerli
 L2veKwenta.sol: `https://goerli-optimism.etherscan.io/address/0x3e52b5f840eafd79394c6359e93bf3ffdae89ee4`<br>
+veKwentaRedeemer: `https://goerli-optimism.etherscan.io/address/0x86ca3CEbEA60101292EEFCd5802fD6e55D647c87`<br>
 
 ## Getting Started
 
